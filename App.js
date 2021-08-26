@@ -19,15 +19,18 @@ function centradoMapa(center) {
     center: center,
     zoom: 10,
   });
+  let buscador = new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken
+});
+
+  map.addControl(buscador, 'top-left' )
 
   let nav = new mapboxgl.NavigationControl()
-  map.addControl(nav);
+  map.addControl(nav, );
 
-  let directions = new MapboxDirections({
-    accessToken: mapboxgl.accessToken
-    });
-    
-    map.addControl(directions, 'top-left')
+
+
+
 
 }
 
